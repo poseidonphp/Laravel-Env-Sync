@@ -1,6 +1,6 @@
 {
   "name": "poseidonphp/laravel-env-sync",
-  "description": "A package that makes sure that your .env file is in sync with your .env.example",
+  "description": "A package that makes sure that your .env file is in sync with your .env.example. This package is compatible with and requires Laravel 8.",
   "type": "library",
   "autoload": {
     "psr-4": {
