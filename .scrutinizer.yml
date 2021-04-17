@@ -16,3 +16,7 @@ build:
                           file: coverage.clover   # <- Set this to where we find the coverage data.
                           #    The path is relative to the current directory.
                           format: clover
+        analysis:
+            tests:
+                override:
+                    - php-scrutinizer-run
