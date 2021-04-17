@@ -33,9 +33,4 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run unit tests
-      run: ./vendor/bin/phpunit --debug -v --coverage-text --coverage-clover=coverage.clover
-      
-    - name: scrutinizer
-      run: |
-        wget https://scrutinizer-ci.com/ocular.phar
-        php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+      run: ./vendor/bin/phpunit --debug -v
