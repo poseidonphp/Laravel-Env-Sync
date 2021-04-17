@@ -1,6 +1,7 @@
 [![Tests](https://github.com/poseidonphp/laravel-env-sync/workflows/Tests/badge.svg?branch=main&event=push)](https://github.com/poseidonphp/Laravel-Env-Sync/actions?query=branch%3Amain)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/poseidonphp/laravel-env-sync.svg?maxAge=3600)](https://scrutinizer-ci.com/g/poseidonphp/Laravel-Env-Sync/?branch=main)
-[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/poseidonphp/laravel-env-sync.svg?maxAge=3600)](https://scrutinizer-ci.com/g/poseidonphp/Laravel-Env-Sync/?branch=main)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/badges/build.png?b=main)](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/build-status/main)
 
 # Laravel Env Sync
 
