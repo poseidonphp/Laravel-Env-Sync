@@ -1,7 +1,9 @@
-[![Tests](https://github.com/poseidonphp/laravel-env-sync/workflows/Tests/badge.svg?branch=main&event=push)](https://github.com/poseidonphp/Laravel-Env-Sync/actions?query=branch%3Amain)
-[![Scrutinizer](https://img.shields.io/scrutinizer/g/poseidonphp/laravel-env-sync.svg?maxAge=3600)](https://scrutinizer-ci.com/g/poseidonphp/Laravel-Env-Sync/?branch=main)
+[![Tests](https://github.com/poseidonphp/laravel-env-sync/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/poseidonphp/laravel-env-sync/actions/workflows/php.yml)
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/poseidonphp/laravel-env-sync.svg?maxAge=1800)](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/?branch=main)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/?branch=main)
 [![Build Status](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/badges/build.png?b=main)](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/build-status/main)
+[![Code Coverage](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/?branch=main)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/poseidonphp/laravel-env-sync/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
 
 # Laravel Env Sync
 
