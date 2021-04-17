@@ -15,7 +15,7 @@ This package is an updated version of the one formerly maintained by jtant/larav
 Start by requiring the package with composer
 
 ```
-composer require jtant/laravel-env-sync
+composer require poseidonphp/laravel-env-sync
 ```
 
 ## Usage
