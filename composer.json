@@ -14,7 +14,7 @@
   },
   "require": {
     "php": ">=7.3",
-    "vlucas/phpdotenv": "^4.0",
+    "vlucas/phpdotenv": "^5.2",
     "illuminate/console": "^8.0",
     "illuminate/support": "^8.0",
     "illuminate/events": "^8.0"
