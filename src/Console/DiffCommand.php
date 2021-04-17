@@ -5,11 +5,11 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Console;
+namespace Poseidonphp\LaravelEnvSync\Console;
 
 use Illuminate\Console\Command;
-use Jtant\LaravelEnvSync\Reader\ReaderInterface;
-use Jtant\LaravelEnvSync\SyncService;
+use Poseidonphp\LaravelEnvSync\Reader\ReaderInterface;
+use Poseidonphp\LaravelEnvSync\SyncService;
 
 class DiffCommand extends BaseCommand
 {

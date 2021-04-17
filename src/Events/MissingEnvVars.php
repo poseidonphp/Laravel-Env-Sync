@@ -1,6 +1,6 @@
 <?php
 
-namespace Jtant\LaravelEnvSync\Events;
+namespace Poseidonphp\LaravelEnvSync\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
 

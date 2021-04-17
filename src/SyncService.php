@@ -5,9 +5,9 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync;
+namespace Poseidonphp\LaravelEnvSync;
 
-use Jtant\LaravelEnvSync\Reader\ReaderInterface;
+use Poseidonphp\LaravelEnvSync\Reader\ReaderInterface;
 
 class SyncService
 {
@@ -27,7 +27,6 @@ class SyncService
 
         $destinationValues = $this->reader->read($destination);
         $sourceValues = $this->reader->read($source);
-
         $diffKeys = array_diff(array_keys($sourceValues), array_keys($destinationValues));
 
         return array_filter($sourceValues, function ($key) use ($diffKeys) {

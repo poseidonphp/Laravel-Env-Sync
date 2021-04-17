@@ -5,11 +5,11 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Tests\Console;
+namespace Poseidonphp\LaravelEnvSync\Tests\Console;
 
 
 use Artisan;
-use Jtant\LaravelEnvSync\EnvSyncServiceProvider;
+use Poseidonphp\LaravelEnvSync\EnvSyncServiceProvider;
 use Orchestra\Testbench\TestCase;
 use org\bovigo\vfs\vfsStream;
 use Symfony\Component\Console\Output\BufferedOutput;

@@ -5,9 +5,9 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync;
+namespace Poseidonphp\LaravelEnvSync;
 
-use Jtant\LaravelEnvSync\Reader\ReaderInterface;
+use Poseidonphp\LaravelEnvSync\Reader\ReaderInterface;
 use org\bovigo\vfs\vfsStream;
 use PHPUnit\Framework\TestCase;
 

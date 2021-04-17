@@ -5,11 +5,11 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Console;
+namespace Poseidonphp\LaravelEnvSync\Console;
 
 use Illuminate\Console\Command;
-use Jtant\LaravelEnvSync\SyncService;
-use Jtant\LaravelEnvSync\Writer\WriterInterface;
+use Poseidonphp\LaravelEnvSync\SyncService;
+use Poseidonphp\LaravelEnvSync\Writer\WriterInterface;
 
 class SyncCommand extends BaseCommand
 {

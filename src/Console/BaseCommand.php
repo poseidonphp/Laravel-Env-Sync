@@ -5,7 +5,7 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Console;
+namespace Poseidonphp\LaravelEnvSync\Console;
 
 
 use Illuminate\Console\Command;

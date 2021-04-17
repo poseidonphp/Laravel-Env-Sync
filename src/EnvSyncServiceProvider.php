@@ -5,13 +5,13 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync;
+namespace Poseidonphp\LaravelEnvSync;
 
 use Illuminate\Support\ServiceProvider;
-use Jtant\LaravelEnvSync\Reader\File\EnvFileReader;
-use Jtant\LaravelEnvSync\Reader\ReaderInterface;
-use Jtant\LaravelEnvSync\Writer\File\EnvFileWriter;
-use Jtant\LaravelEnvSync\Writer\WriterInterface;
+use Poseidonphp\LaravelEnvSync\Reader\File\EnvFileReader;
+use Poseidonphp\LaravelEnvSync\Reader\ReaderInterface;
+use Poseidonphp\LaravelEnvSync\Writer\File\EnvFileWriter;
+use Poseidonphp\LaravelEnvSync\Writer\WriterInterface;
 
 class EnvSyncServiceProvider extends ServiceProvider
 {

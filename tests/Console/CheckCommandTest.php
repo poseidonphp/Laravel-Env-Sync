@@ -5,11 +5,11 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Tests\Console;
+namespace Poseidonphp\LaravelEnvSync\Tests\Console;
 
 
 use Artisan;
-use Jtant\LaravelEnvSync\EnvSyncServiceProvider;
+use Poseidonphp\LaravelEnvSync\EnvSyncServiceProvider;
 use Orchestra\Testbench\TestCase;
 use org\bovigo\vfs\vfsStream;
 
@@ -30,6 +30,7 @@ class CheckCommandTest extends TestCase
 
         file_put_contents($root->url() . '/.env.example', $example);
         file_put_contents($root->url() . '/.env', $env);
+
 
         $this->app->setBasePath($root->url());
 

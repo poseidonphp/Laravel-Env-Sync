@@ -5,9 +5,9 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Writer\File;
+namespace Poseidonphp\LaravelEnvSync\Writer\File;
 
-use Jtant\LaravelEnvSync\Writer\WriterInterface;
+use Poseidonphp\LaravelEnvSync\Writer\WriterInterface;
 
 class EnvFileWriter implements WriterInterface
 {

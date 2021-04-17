@@ -5,11 +5,11 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Reader\File;
+namespace Poseidonphp\LaravelEnvSync\Reader\File;
 
 use Dotenv\Dotenv;
 use Dotenv\Environment\DotenvFactory;
-use Jtant\LaravelEnvSync\Reader\ReaderInterface;
+use Poseidonphp\LaravelEnvSync\Reader\ReaderInterface;
 
 class EnvFileReader implements ReaderInterface
 {
@@ -35,7 +35,7 @@ class EnvFileReader implements ReaderInterface
             $dir = dirname($resource);
             $name = basename($resource);
         }
-
-        return Dotenv::createImmutable($dir, $name)->load();
+        return Dotenv::createArrayBacked($dir, $name)->load();
+//        return Dotenv::createImmutable($dir, $name)->load();
     }
 }

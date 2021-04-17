@@ -5,6 +5,6 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync;
+namespace Poseidonphp\LaravelEnvSync;
 
 class FileNotFound extends \Exception{}

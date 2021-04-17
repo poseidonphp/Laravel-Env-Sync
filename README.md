@@ -8,6 +8,8 @@ Keep your .env in sync with your .env.example or vice versa.
 
 It reads the .env.example file and makes suggestions to fill your .env accordingly. 
 
+This package is an updated version of the one formerly maintained by jtant/laravel-env-sync which has been abandoned. It is designed to work with Laravel v8+.
+
 ## Installation via Composer
 
 Start by requiring the package with composer
@@ -15,9 +17,6 @@ Start by requiring the package with composer
 ```
 composer require jtant/laravel-env-sync
 ```
-
-
-Then, if you use laravel < 5.5,  add the `Jtant\LaravelEnvSync\EnvSyncServiceProvider::class` service provider to your `config/app.php` file, and that's it
 
 ## Usage
 
@@ -41,7 +40,7 @@ The command simply show you which keys are not present in your .env file. This c
 
 Again, you can launch the command with the option `--reverse` or with `--src` and `--dest`.
 
-The command will also dispatch event `Jtant\LaravelEnvSync\Events\MissingEnvVars`, which will contain the missing env variables, which could be used in automatic deployments. Event is only fired when there are missing env variables.
+The command will also dispatch event `Poseidonphp\LaravelEnvSync\Events\MissingEnvVars`, which will contain the missing env variables, which could be used in automatic deployments. Event is only fired when there are missing env variables.
 
 ### Show diff between your envs files
 

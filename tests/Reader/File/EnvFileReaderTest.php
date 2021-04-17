@@ -5,12 +5,12 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Tests\Reader\File;
+namespace Poseidonphp\LaravelEnvSync\Tests\Reader\File;
 
 
-use Jtant\LaravelEnvSync\Reader\File\EnvFileReader;
-use Jtant\LaravelEnvSync\Reader\File\FileRequired;
-use Jtant\LaravelEnvSync\Reader\ReaderInterface;
+use Poseidonphp\LaravelEnvSync\Reader\File\EnvFileReader;
+use Poseidonphp\LaravelEnvSync\Reader\File\FileRequired;
+use Poseidonphp\LaravelEnvSync\Reader\ReaderInterface;
 use org\bovigo\vfs\vfsStream;
 use PHPUnit\Framework\TestCase;
 use VirtualFileSystem\FileSystem;

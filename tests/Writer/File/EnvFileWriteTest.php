@@ -5,11 +5,11 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Tests\Writer\File;
+namespace Poseidonphp\LaravelEnvSync\Tests\Writer\File;
 
 
-use Jtant\LaravelEnvSync\Writer\File\EnvFileWriter;
-use Jtant\LaravelEnvSync\Writer\WriterInterface;
+use Poseidonphp\LaravelEnvSync\Writer\File\EnvFileWriter;
+use Poseidonphp\LaravelEnvSync\Writer\WriterInterface;
 use org\bovigo\vfs\vfsStream;
 use PHPUnit\Framework\TestCase;
 

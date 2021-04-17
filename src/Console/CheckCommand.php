@@ -5,10 +5,10 @@
  * @author Julien Tant - Craftyx <julien@craftyx.fr>
  */
 
-namespace Jtant\LaravelEnvSync\Console;
+namespace Poseidonphp\LaravelEnvSync\Console;
 
-use Jtant\LaravelEnvSync\Events\MissingEnvVars;
-use Jtant\LaravelEnvSync\SyncService;
+use Poseidonphp\LaravelEnvSync\Events\MissingEnvVars;
+use Poseidonphp\LaravelEnvSync\SyncService;
 
 class CheckCommand extends BaseCommand
 {
