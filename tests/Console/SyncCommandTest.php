@@ -15,6 +15,12 @@ use org\bovigo\vfs\vfsStream;
 
 class SyncCommandTest extends TestCase
 {
+    const EXAMPLE_ENV_STRING = "FOO=BAR\nBAR=BAZ\nBAZ=FOO";
+    const EXPECTED_ENV_STRING = "FOO=BAR\nBAZ=FOO\nBAR=BAZ";
+    const ENV_FILE = '/.env';
+    const ENV_EXAMPLE_FILE = '/.env.example';
+    const ENV_SYNC_COMMAND = "env:sync";
+
     protected function getPackageProviders($app)
     {
         return [EnvSyncServiceProvider::class];
@@ -25,22 +31,20 @@ class SyncCommandTest extends TestCase
     {
         // Arrange
         $root = vfsStream::setup();
-        $example = "FOO=BAR\nBAR=BAZ\nBAZ=FOO";
         $env = "FOO=BAR\nBAZ=FOO";
 
-        file_put_contents($root->url() . '/.env.example', $example);
-        file_put_contents($root->url() . '/.env', $env);
+        file_put_contents($root->url() . self::ENV_EXAMPLE_FILE, self::EXAMPLE_ENV_STRING);
+        file_put_contents($root->url() . self::ENV_FILE, $env);
 
         $this->app->setBasePath($root->url());
 
         // Act
-        Artisan::call('env:sync', [
+        Artisan::call(self::ENV_SYNC_COMMAND, [
             '--no-interaction' => true,
         ]);
 
         // Assert
-        $expected = "FOO=BAR\nBAZ=FOO\nBAR=BAZ";
-        $this->assertEquals($expected, file_get_contents($root->url() . '/.env'));
+        $this->assertEquals(self::EXPECTED_ENV_STRING, file_get_contents($root->url() . self::ENV_FILE));
     }
 
     /** @test */
@@ -48,23 +52,21 @@ class SyncCommandTest extends TestCase
     {
         // Arrange
         $root = vfsStream::setup();
-        $env= "FOO=BAR\nBAR=BAZ\nBAZ=FOO";
         $example  = "FOO=BAR\nBAZ=FOO";
 
-        file_put_contents($root->url() . '/.env.example', $example);
-        file_put_contents($root->url() . '/.env', $env);
+        file_put_contents($root->url() . self::ENV_EXAMPLE_FILE, $example);
+        file_put_contents($root->url() . self::ENV_FILE, self::EXAMPLE_ENV_STRING);
 
         $this->app->setBasePath($root->url());
 
         // Act
-        Artisan::call('env:sync', [
+        Artisan::call(self::ENV_SYNC_COMMAND, [
             '--no-interaction' => true,
             '--reverse' => true,
         ]);
 
         // Assert
-        $expected = "FOO=BAR\nBAZ=FOO\nBAR=BAZ";
-        $this->assertEquals($expected, file_get_contents($root->url() . '/.env.example'));
+        $this->assertEquals(self::EXPECTED_ENV_STRING, file_get_contents($root->url() . self::ENV_EXAMPLE_FILE));
     }
 
 
@@ -73,23 +75,21 @@ class SyncCommandTest extends TestCase
     {
         // Arrange
         $root = vfsStream::setup();
-        $example = "FOO=BAR\nBAR=BAZ\nBAZ=FOO";
         $env = "FOO=BAR\nBAZ=FOO";
 
-        file_put_contents($root->url() . '/.foo', $example);
+        file_put_contents($root->url() . '/.foo', self::EXAMPLE_ENV_STRING);
         file_put_contents($root->url() . '/.bar', $env);
 
         $this->app->setBasePath($root->url());
 
         // Act
-        Artisan::call('env:sync', [
+        Artisan::call(self::ENV_SYNC_COMMAND, [
             '--no-interaction' => true,
             '--src' => $root->url() .'/.foo',
             '--dest' => $root->url() .'/.bar'
         ]);
 
         // Assert
-        $expected = "FOO=BAR\nBAZ=FOO\nBAR=BAZ";
-        $this->assertEquals($expected, file_get_contents($root->url() . '/.bar'));
+        $this->assertEquals(self::EXPECTED_ENV_STRING, file_get_contents($root->url() . '/.bar'));
     }
 }

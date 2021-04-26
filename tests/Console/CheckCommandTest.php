@@ -15,6 +15,11 @@ use org\bovigo\vfs\vfsStream;
 
 class CheckCommandTest extends TestCase
 {
+    const EXAMPLE_ENV_STRING = "FOO=BAR\nBAR=BAZ\nBAZ=FOO";
+    const ENV_FILE = '/.env';
+    const ENV_EXAMPLE_FILE = '/.env.example';
+    const ENV_CHECK_COMMAND = "env:check";
+
     protected function getPackageProviders($app)
     {
         return [EnvSyncServiceProvider::class];
@@ -25,17 +30,16 @@ class CheckCommandTest extends TestCase
     {
         // Arrange
         $root = vfsStream::setup();
-        $example = "FOO=BAR\nBAR=BAZ\nBAZ=FOO";
         $env = "BAR=BAZ\nFOO=BAR\nBAZ=FOO";
 
-        file_put_contents($root->url() . '/.env.example', $example);
-        file_put_contents($root->url() . '/.env', $env);
+        file_put_contents($root->url() . self::ENV_EXAMPLE_FILE, self::EXAMPLE_ENV_STRING);
+        file_put_contents($root->url() . self::ENV_FILE, $env);
 
 
         $this->app->setBasePath($root->url());
 
         // Act
-        $returnCode = Artisan::call('env:check');
+        $returnCode = Artisan::call(self::ENV_CHECK_COMMAND);
 
         // Assert
         $this->assertSame(0, (int)$returnCode);
@@ -47,16 +51,15 @@ class CheckCommandTest extends TestCase
     {
         // Arrange
         $root = vfsStream::setup();
-        $example = "FOO=BAR\nBAR=BAZ\nBAZ=FOO";
         $env = "FOO=BAR\nBAZ=FOO";
 
-        file_put_contents($root->url() . '/.env.example', $example);
-        file_put_contents($root->url() . '/.env', $env);
+        file_put_contents($root->url() . self::ENV_EXAMPLE_FILE, self::EXAMPLE_ENV_STRING);
+        file_put_contents($root->url() . self::ENV_FILE, $env);
 
         $this->app->setBasePath($root->url());
 
         // Act
-        $returnCode = Artisan::call('env:check');
+        $returnCode = Artisan::call(self::ENV_CHECK_COMMAND);
 
         // Assert
         $this->assertSame(1, (int)$returnCode);
@@ -68,16 +71,15 @@ class CheckCommandTest extends TestCase
     {
         // Arrange
         $root = vfsStream::setup();
-        $env = "FOO=BAR\nBAR=BAZ\nBAZ=FOO";
         $example = "FOO=BAR\nBAZ=FOO";
 
-        file_put_contents($root->url() . '/.env.example', $example);
-        file_put_contents($root->url() . '/.env', $env);
+        file_put_contents($root->url() . self::ENV_EXAMPLE_FILE, $example);
+        file_put_contents($root->url() . self::ENV_FILE, self::EXAMPLE_ENV_STRING);
 
         $this->app->setBasePath($root->url());
 
         // Act
-        $returnCode = Artisan::call('env:check', ["--reverse" => true]);
+        $returnCode = Artisan::call(self::ENV_CHECK_COMMAND, ["--reverse" => true]);
 
         // Assert
         $this->assertSame(1, (int)$returnCode);

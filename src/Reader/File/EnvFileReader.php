@@ -36,6 +36,5 @@ class EnvFileReader implements ReaderInterface
             $name = basename($resource);
         }
         return Dotenv::createArrayBacked($dir, $name)->load();
-//        return Dotenv::createImmutable($dir, $name)->load();
     }
 }
