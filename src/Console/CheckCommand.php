@@ -17,7 +17,7 @@ class CheckCommand extends BaseCommand
      *
      * @var string
      */
-    protected $signature = 'env:check {--src=} {--dest=} {--reverse}';
+    protected $signature = 'env:check {--src=} {--dest=} {--reverse} {--skip-when-missing-env}';
 
     /**
      * The console command description.
@@ -56,7 +56,19 @@ class CheckCommand extends BaseCommand
             list($src, $dest) = [$dest, $src];
         }
 
-        $diffs = $this->sync->getDiff($src, $dest);
+        $skipWhenMissingEnv = $this->option('skip-when-missing-env');
+        try {
+            $diffs = $this->sync->getDiff($src, $dest);
+        } catch (\Exception $exception) {
+            if($skipWhenMissingEnv && $exception instanceof \Poseidonphp\LaravelEnvSync\FileNotFound) {
+                $this->info('File not found; silently ignoring');
+                return 0;
+            } else {
+                $this->error('Something went wrong');
+                throw $exception;
+            }
+        }
+
 
         if (count($diffs) === 0) {
             $this->info(sprintf("Your %s file is already in sync with %s", basename($dest), basename($src)));
